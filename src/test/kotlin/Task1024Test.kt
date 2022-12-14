@@ -5,12 +5,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
-//import org.junit.jupiter.api.AfterEach
-//import org.junit.jupiter.api.BeforeEach
-//import org.junit.jupiter.api.Disabled
-//import org.junit.jupiter.api.Test
-
-class Test {
+class Task1024Test {
     private val input = StandardInputStream()
     private val output = StandardOutputStream()
 
@@ -89,36 +84,39 @@ class Test {
     //     }
 
     fun main() {
-        // val n = readLine()!!.toInt()
-        // val (n, m) = readLine()!!.split(" ").map { it.toInt() }
-        // val a = List(n) { readLine()!!.split(" ").map { it.toInt() } }
-        // val s = readLine()!!.split("").filter { it != "" }
-        // val list = List(n) {
-        //     readLine()!!.split(" ").map { it.toInt() }.let {
-        //         Pair(it.first(), it.last())
-        //     }
-        // }
-        println()
+        val (n, m) = readLine()!!.split(" ").map { it.toInt() }
+        var count: Long = 0
+        for (i in 1..n) {
+            for (j in 1..n) {
+                for (k in 1..n) {
+                    if (i + j + k <= m) {
+                        count++
+                    }
+                }
+            }
+        }
+
+        println(count)
     }
 
     @Test
     fun a_1() {
-        input.inputln("")
+        input.inputln("2 4")
 
         main()
 
         val result = output.readLines()
-        assertThat(result, equalTo(listOf("")))
+        assertThat(result, equalTo(listOf("4")))
     }
 
     @Test
     fun a_2() {
-        input.inputln("")
+        input.inputln("1000 2022")
 
         main()
 
         val result = output.readLines()
-        assertThat(result, equalTo(listOf("")))
+        assertThat(result, equalTo(listOf("843614540")))
     }
 
     @Disabled

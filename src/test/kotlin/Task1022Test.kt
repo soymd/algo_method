@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 //import org.junit.jupiter.api.AfterEach
 //import org.junit.jupiter.api.BeforeEach
 //import org.junit.jupiter.api.Disabled
-//import org.junit.jupiter.api.Test
+//import org.junit.jupiter.api.TaskTest
 
 class Task1022Test {
     private val input = StandardInputStream()

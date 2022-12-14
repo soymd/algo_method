@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test
 //import org.junit.jupiter.api.Disabled
 //import org.junit.jupiter.api.TaskTest
 
-class Task1023Test {
+class TaskTest {
     private val input = StandardInputStream()
     private val output = StandardOutputStream()
 
@@ -89,34 +89,36 @@ class Task1023Test {
     //     }
 
     fun main() {
-        val n = readLine()!!.toInt()
-        val list = readLine()!!.split(" ").map { it.toLong() }.toMutableList()
-
-        val min = list.minOrNull()!!
-        list.remove(min)
-        println(list.sum())
+        // val n = readLine()!!.toInt()
+        // val (n, m) = readLine()!!.split(" ").map { it.toInt() }
+        // val a = List(n) { readLine()!!.split(" ").map { it.toInt() } }
+        // val s = readLine()!!.split("").filter { it != "" }
+        // val list = List(n) {
+        //     readLine()!!.split(" ").map { it.toInt() }.let {
+        //         Pair(it.first(), it.last())
+        //     }
+        // }
+        println()
     }
 
     @Test
     fun a_1() {
-        input.inputln("3")
-        input.inputln("3 1 4")
+        input.inputln("")
 
         main()
 
         val result = output.readLines()
-        assertThat(result, equalTo(listOf("7")))
+        assertThat(result, equalTo(listOf("")))
     }
 
     @Test
     fun a_2() {
-        input.inputln("6")
-        input.inputln("1000000000 1000000000 1000000000 1000000000 1000000000 1000000000")
+        input.inputln("")
 
         main()
 
         val result = output.readLines()
-        assertThat(result, equalTo(listOf("5000000000")))
+        assertThat(result, equalTo(listOf("")))
     }
 
     @Disabled
