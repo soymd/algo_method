@@ -86,13 +86,11 @@ class Task1024Test {
     fun main() {
         val (n, m) = readLine()!!.split(" ").map { it.toInt() }
         var count: Long = 0
-        for (i in 1..n) {
-            for (j in 1..n) {
-                for (k in 1..n) {
-                    if (i + j + k <= m) {
-                        count++
-                    }
-                }
+        for (x in 1..n) {
+            for (y in 1..n) {
+                val sum = x + y
+                if (m <= sum) continue
+                count += m - sum
             }
         }
 
