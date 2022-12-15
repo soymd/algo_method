@@ -88,9 +88,9 @@ class Task1024Test {
         var count: Long = 0
         for (x in 1..n) {
             for (y in 1..n) {
-                val sum = x + y
-                if (m <= sum) continue
-                count += m - sum
+                val min = minOf(n, m - x - y)
+                if (min <= 0) continue
+                count += min
             }
         }
 
