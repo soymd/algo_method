@@ -92,18 +92,20 @@ class Task439Test {
         val n = readLine()!!.toInt()
         val list = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
-        val bool = Array(n) { false }
+        val boolArray = Array(n) { false }
         while (true) {
             for (i in 0 until n - 1) {
                 val a = list[i]
                 val b = list[i + 1]
-                bool[i] = a > b
-                if (bool[i]) {
+                if (a > b) {
+                    boolArray[i] = true
                     list[i] = b
                     list[i + 1] = a
+                } else {
+                    boolArray[i] = false
                 }
             }
-            if (bool.any { it }) {
+            if (boolArray.any { it }) {
                 println(list.joinToString(" "))
             } else {
                 return
