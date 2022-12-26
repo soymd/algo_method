@@ -94,13 +94,42 @@ class Task440Test {
 
         for (i in 0 until n - 1) {
             val a = list[i]
-            val subList = list.subList(i + 1, n)
+            val subList = list.subList(i, n)
             val min = subList.minOrNull()!!
-            val minIndex = subList.indexOf(min) + i + 1
+            val minIndex = subList.indexOf(min) + i
             list[i] = min
             list[minIndex] = a
             println(list.joinToString(" "))
         }
+    }
+
+    @Test
+    fun a_00() {
+        input.inputln("3")
+        input.inputln("2 1 3")
+
+        main()
+
+        val result = output.readLines()
+        assertThat(result, equalTo(listOf(
+            "1 2 3",
+            "1 2 3",
+        )))
+    }
+
+    @Test
+    fun a_0() {
+        input.inputln("4")
+        input.inputln("2 1 3 4")
+
+        main()
+
+        val result = output.readLines()
+        assertThat(result, equalTo(listOf(
+            "1 2 3 4",
+            "1 2 3 4",
+            "1 2 3 4",
+        )))
     }
 
     @Test
@@ -133,15 +162,25 @@ class Task440Test {
         )))
     }
 
-    @Disabled
     @Test
     fun a_3() {
-        input.inputln("")
+        input.inputln("10")
+        input.inputln("10 7 6 7 8 5 6 8 4 6")
 
         main()
 
         val result = output.readLines()
-        assertThat(result, equalTo(listOf("")))
+        assertThat(result, equalTo(listOf(
+            "4 7 6 7 8 5 6 8 10 6",
+            "4 5 6 7 8 7 6 8 10 6",
+            "4 5 6 7 8 7 6 8 10 6",
+            "4 5 6 6 8 7 7 8 10 6",
+            "4 5 6 6 6 7 7 8 10 8",
+            "4 5 6 6 6 7 7 8 10 8",
+            "4 5 6 6 6 7 7 8 10 8",
+            "4 5 6 6 6 7 7 8 10 8",
+            "4 5 6 6 6 7 7 8 8 10",
+        )))
     }
 
     @Disabled
