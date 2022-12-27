@@ -94,9 +94,9 @@ class Task440Test {
 
         for (i in 0 until n - 1) {
             val a = list[i]
-            val subList = list.subList(i, n)
-            val min = subList.minOrNull()!!
-            val minIndex = subList.indexOf(min) + i
+            val sublist = list.subList(i, n)
+            val min = sublist.minOrNull()!!
+            val minIndex = sublist.indexOf(min) + i
             list[i] = min
             list[minIndex] = a
             println(list.joinToString(" "))
