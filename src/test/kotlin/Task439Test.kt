@@ -102,9 +102,9 @@ class Task439Test {
                     list[i + 1] = a
                     list[i] = b
                 }
-                if (bool.all { !it }) {
-                    return
-                }
+            }
+            if (bool.all { !it }) {
+                return
             }
             println(list.joinToString(" "))
         }
@@ -136,15 +136,22 @@ class Task439Test {
         assertThat(result, equalTo(listOf()))
     }
 
-    @Disabled
     @Test
     fun a_3() {
-        input.inputln("")
+        input.inputln("10")
+        input.inputln("4 7 5 3 4 8 2 7 4 9")
 
         main()
 
         val result = output.readLines()
-        assertThat(result, equalTo(listOf("")))
+        assertThat(result, equalTo(listOf(
+            "4 5 3 4 7 2 7 4 8 9",
+            "4 3 4 5 2 7 4 7 8 9",
+            "3 4 4 2 5 4 7 7 8 9",
+            "3 4 2 4 4 5 7 7 8 9",
+            "3 2 4 4 4 5 7 7 8 9",
+            "2 3 4 4 4 5 7 7 8 9",
+        )))
     }
 
     @Disabled
