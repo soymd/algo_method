@@ -92,24 +92,21 @@ class Task439Test {
         val n = readLine()!!.toInt()
         val list = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
-        val boolArray = Array(n) { false }
+        val bool = Array(n) { false }
         while (true) {
             for (i in 0 until n - 1) {
                 val a = list[i]
                 val b = list[i + 1]
+                bool[i] = a > b
                 if (a > b) {
-                    boolArray[i] = true
-                    list[i] = b
                     list[i + 1] = a
-                } else {
-                    boolArray[i] = false
+                    list[i] = b
+                }
+                if (bool.all { !it }) {
+                    return
                 }
             }
-            if (boolArray.any { it }) {
-                println(list.joinToString(" "))
-            } else {
-                return
-            }
+            println(list.joinToString(" "))
         }
     }
 
@@ -121,15 +118,11 @@ class Task439Test {
         main()
 
         val result = output.readLines()
-        assertThat(
-            result, equalTo(
-                listOf(
-                    "1 3 4 2 5",
-                    "1 3 2 4 5",
-                    "1 2 3 4 5",
-                )
-            )
-        )
+        assertThat(result, equalTo(listOf(
+            "1 3 4 2 5",
+            "1 3 2 4 5",
+            "1 2 3 4 5",
+        )))
     }
 
     @Test
