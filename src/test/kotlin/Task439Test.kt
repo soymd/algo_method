@@ -91,9 +91,8 @@ class Task439Test {
     fun main() {
         val n = readLine()!!.toInt()
         val list = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
-
-        var bool = true
-        while (bool) {
+        var bool: Boolean
+        while (true) {
             bool = false
             for (i in 0 until n - 1) {
                 val a = list[i]
