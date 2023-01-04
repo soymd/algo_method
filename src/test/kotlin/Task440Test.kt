@@ -93,10 +93,11 @@ class Task440Test {
         val list = readLine()!!.split(" ").map { it.toInt() }.toMutableList()
 
         for (i in 0 until n - 1) {
-            val a = list[i]
             val sublist = list.subList(i, n)
             val min = sublist.minOrNull()!!
             val minIndex = sublist.indexOf(min) + i
+            val a = list[i]
+
             list[i] = min
             list[minIndex] = a
             println(list.joinToString(" "))
